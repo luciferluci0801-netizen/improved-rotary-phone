@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Japonica — Вэб сайт яаралтай шинэчлэгдэж байна</title>
+  <style>
+    :root{--bg1:#0f172a;--bg2:#0b1220;--accent:#5b9bd5;--accent2:#f4b183;--glass:rgba(255,255,255,0.06)}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,'Noto Sans','Helvetica Neue',Arial;}
+    body{
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(91,155,213,0.10), transparent),
+                  radial-gradient(900px 400px at 90% 90%, rgba(244,177,131,0.06), transparent),
+                  linear-gradient(180deg,var(--bg1),var(--bg2));
+      color:#e6eef8;display:flex;align-items:center;justify-content:center;padding:2rem;
+    }
+    .card{width:min(1000px,96%);border-radius:18px;padding:2rem;backdrop-filter: blur(6px);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow: 0 10px 30px rgba(2,6,23,0.6);display:grid;grid-template-columns:1fr 380px;gap:1.5rem;align-items:center}
+    .left h1{font-size:clamp(1.6rem,2.8vw,2.6rem);margin:0 0 .4rem 0}
+    .left p{margin:.25rem 0 1rem 0;line-height:1.45;color:#cfe5ff}
+    .logo{display:inline-flex;align-items:center;gap:.6rem}
+    .logo .dot{width:44px;height:44px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:inline-grid;place-items:center;font-weight:700;color:#07203a}
+    .cta{margin-top:1rem;display:flex;gap:.6rem}
+    .btn{padding:.7rem 1rem;border-radius:12px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#3f7cc3);color:#06203a}
+    .btn-ghost{background:transparent;color:#bcd7ff;border:1px solid rgba(255,255,255,0.06)}
+    .meta{font-size:.9rem;color:#9fc0ff;margin-top:.6rem}
+
+    .right{display:flex;flex-direction:column;align-items:center;gap:1rem}
+    .illustration{width:100%;height:220px;border-radius:12px;background:linear-gradient(180deg, rgba(91,155,213,0.10), rgba(244,177,131,0.05));display:grid;place-items:center}
+    .gear{width:130px;height:130px}
+    .count{font-size:1.1rem;font-weight:700}
+
+    footer{grid-column:1/-1;margin-top:1rem;color:#9fbfe8;font-size:.9rem;display:flex;justify-content:space-between;align-items:center}
+    .contact{display:flex;gap:.6rem;align-items:center}
+    .small{font-size:.85rem;color:#bcd7ff}
+
+    @media (max-width:880px){
+      .card{grid-template-columns:1fr;}
+      .illustration{height:160px}
+    }
+
+    /* subtle animation */
+    @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    .gear svg{animation:spin 12s linear infinite}
+  </style>
+</head>
+<body>
+  <div class="card" role="main">
+    <div class="left">
+      <div class="logo"><div class="dot">J</div><div>
+        <div class="small">Japonica Project</div>
+        <h1>Вэб сайт түр хугацаанд шинэчлэгдэж байна</h1>
+      </div></div>
+
+      <p>Бид сайт дээр шинэ функцууд, бүтээгдэхүүний нэмэлт тайлан болон борлуулалтын боломжуудыг нэмж байна. we are coming soon.</p>
+
+      <div class="cta">
+        <button class="btn btn-primary" onclick="notify()">Бидэн рүү имэйл илгээх</button>
+        <a href="mailto:info@yourcompany.mn" class="btn btn-ghost">info@yourcompany.mn</a>
+      </div>
+
+      <div class="meta">Хэрэв танд яаралтай асуулт байвал бидэнтэй холбогдоно уу — утас: +976 80905900</div>
+    </div>
+
+    <div class="right">
+      <div class="illustration" aria-hidden>
+        <div class="gear" title="under construction icon">
+          <!-- simple SVG gear -->
+          <svg viewBox="0 0 100 100" width="130" height="130" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#5b9bd5" stop-opacity="1"/>
+                <stop offset="1" stop-color="#f4b183" stop-opacity="1"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#g1)" d="M78.8 54.2c.1-1 .1-2 .1-3s0-2-.1-3l6.7-5.2c.6-.5.8-1.4.4-2.1l-6.3-10.9c-.4-.7-1.3-1-2.1-.7l-8 3.2c-1.6-1.2-3.3-2.2-5.1-2.9l-1.2-8.6c-.1-.9-.9-1.6-1.8-1.6H41.9c-.9 0-1.6.6-1.8 1.5l-1.2 8.7c-1.8.7-3.5 1.6-5.1 2.9L24.6 27c-.8-.3-1.7 0-2.1.7L16.2 38.6c-.4.7-.2 1.6.4 2.1l6.7 5.2c-.1 1-.1 2-.1 3s0 2 .1 3l-6.7 5.2c-.6.5-.8 1.4-.4 2.1l6.3 10.9c.4.7 1.3 1 2.1.7l8-3.2c1.6 1.2 3.3 2.2 5.1 2.9l1.2 8.6c.1.9.9 1.6 1.8 1.6h13.3c.9 0 1.6-.6 1.8-1.5l1.2-8.7c1.8-.7 3.5-1.6 5.1-2.9l8 3.2c.8.3 1.7 0 2.1-.7l6.3-10.9c.4-.7.2-1.6-.4-2.1L78.8 54.2zM50 66a16 16 0 1 1 0-32 16 16 0 0 1 0 32z"/>
+            <circle cx="50" cy="50" r="9" fill="#07102a" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="count" id="countdown">Тун удахгүй — шинэчлэлт хийгдэж байна</div>
+      <div class="small">Бидний зорилго: Илүү сайн UX, илүү дэлгэрэнгүй бүтээгдэхүүний мэдээлэл</div>
+    </div>
+
+    <footer>
+      <div>© Namkha Deden LLC </div>
+      <div class="contact">Холбоо: <a href="mailto:info@yourcompany.mn" style="color:inherit;text-decoration:underline">www.namkhadede.mn</a></div>
+    </footer>
+  </div>
+
+  <script>
+    // simple friendly notification and countdown placeholder
+    function notify(){
+      const mail = 'info@yourcompany.mn';
+      const subject = encodeURIComponent('Сайт дахин нээлт — Холбогдох');
+      const body = encodeURIComponent('Сайн байна уу, цахим хуудасны шинэчлэлтэй холбоотой мэдээлэл авмаар байна.\n\nТа өөрийн асуултаа бичнэ үү...');
+      window.location.href = `mailto:${mail}?subject=${subject}&body=${body}`;
+    }
+
+    // optional countdown to approximate launch (30 days from now)
+    (function(){
+      const el = document.getElementById('countdown');
+      const now = new Date();
+      const launch = new Date();
+      launch.setDate(now.getDate() + 30);
+
+      function pad(n){return n<10? '0'+n:n}
+      function update(){
+        const diff = launch - new Date();
+        if(diff<=0){ el.textContent = 'Сайт одоо идэвхтэй боллоо!'; return; }
+        const d = Math.floor(diff/86400000);
+        const h = Math.floor((diff%86400000)/3600000);
+        const m = Math.floor((diff%3600000)/60000);
+        const s = Math.floor((diff%60000)/1000);
+        el.textContent = `Нээлт: ${d} хоног ${pad(h)}:${pad(m)}:${pad(s)}`;
+      }
+      update(); setInterval(update,1000);
+    })();
+  </script>
+</body>
+</html>
